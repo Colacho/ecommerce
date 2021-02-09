@@ -1,0 +1,25 @@
+{
+  "perfume": [
+    {
+      "fragancia": "madera",
+      "nombre": "Polo Classic",
+      "precio": "$ 6000"
+    },
+    {
+      "fragancia": "cuero",
+      "nombre": "Equus",
+      "precio": "$ 5000"
+    }
+  ],
+
+  "crema": [
+    {
+      "nombre": "Rosa mosqueta",
+      "precio": "$ 400"
+    },
+    {
+      "nombre": "Ordeñe",
+      "precio": "$ 300"
+    }
+  ]
+}
