@@ -21,7 +21,6 @@ const Layout = ({ children }) => {
       <Helmet>
         <html className="h-screen"></html>
         <body className="h-screen"></body>
-        <main className="h-screen"></main>
       </Helmet>
 
       <div className="flex flex-col h-screen">

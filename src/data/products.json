@@ -1,25 +1,25 @@
-{
-  "perfume": [
-    {
-      "fragancia": "madera",
-      "nombre": "Polo Classic",
-      "precio": "$ 6000"
-    },
-    {
-      "fragancia": "cuero",
-      "nombre": "Equus",
-      "precio": "$ 5000"
-    }
-  ],
+[
+  {
+    "type": "perfume",
+    "fragance": "madera",
+    "name": "Polo Classic",
+    "price": "$ 6000"
+  },
+  {
+    "type": "perfume",
+    "fragance": "cuero",
+    "name": "Equus",
+    "price": "$ 5000"
+  },
 
-  "crema": [
-    {
-      "nombre": "Rosa mosqueta",
-      "precio": "$ 400"
-    },
-    {
-      "nombre": "Ordeñe",
-      "precio": "$ 300"
-    }
-  ]
-}
+  {
+    "type": "crema",
+    "name": "Rosa mosqueta",
+    "price": "$ 400"
+  },
+  {
+    "type": "crema",
+    "name": "Ordeñe",
+    "price": "$ 300"
+  }
+]

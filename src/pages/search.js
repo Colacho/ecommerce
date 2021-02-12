@@ -1,22 +1,25 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const SecondPage = () => {
+const Search = ({ data }) => {
   const [item, setItem] = useState("")
 
   const handleChange = e => {
-    setItem(e.target.value)
+    setItem(e.target.value.toLowerCase())
   }
 
+  const productList = data.allProductsJson.nodes
+  const matched = productList.filter(i => i.name.toLowerCase().includes(item))
+  console.log(matched)
+  console.log(item)
   return (
     <Layout>
       <Helmet>
         <html className="h-screen"></html>
         <body className="h-screen"></body>
-        <main className="h-screen"></main>
       </Helmet>
       <SEO title="Products" />
       <h1>Buscar</h1>
@@ -30,10 +33,32 @@ const SecondPage = () => {
           onChange={handleChange}
         />
       </form>
-      <h1>{item}</h1>
+      <div>
+        {item !== ""
+          ? matched.map(product => (
+              <div>
+                <p>{product.name}</p>
+              </div>
+            ))
+          : null}
+      </div>
       <Link to="/">Volver a la pagina principal</Link>
     </Layout>
   )
 }
 
-export default SecondPage
+export const query = graphql`
+  query ProductsQuery {
+    allProductsJson {
+      nodes {
+        id
+        type
+        name
+        price
+        fragance
+      }
+    }
+  }
+`
+
+export default Search
