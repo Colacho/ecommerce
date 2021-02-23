@@ -1,20 +1,13 @@
-import React, { useState } from "react"
+import React from "react"
 import { graphql, Link } from "gatsby"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import SearchBar from "../components/searchBar"
 const Search = ({ data }) => {
-  const [item, setItem] = useState("")
-
-  const handleChange = e => {
-    setItem(e.target.value.toLowerCase())
-  }
-
   const productList = data.allProductsJson.nodes
-  const matched = productList.filter(i => i.name.toLowerCase().includes(item))
-  console.log(matched)
-  console.log(item)
+
   return (
     <Layout>
       <Helmet>
@@ -23,25 +16,9 @@ const Search = ({ data }) => {
       </Helmet>
       <SEO title="Products" />
       <h1>Buscar</h1>
-      <hr />
-      <form>
-        <input
-          placeholder="buscar..."
-          name="item"
-          type="text"
-          value={item}
-          onChange={handleChange}
-        />
-      </form>
-      <div>
-        {item !== ""
-          ? matched.map(product => (
-              <div>
-                <p>{product.name}</p>
-              </div>
-            ))
-          : null}
-      </div>
+
+      <SearchBar products={productList} />
+
       <Link to="/">Volver a la pagina principal</Link>
     </Layout>
   )
@@ -54,8 +31,16 @@ export const query = graphql`
         id
         type
         name
+        brand
         price
-        fragance
+        tag
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

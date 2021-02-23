@@ -1,25 +1,82 @@
 [
   {
-    "type": "perfume",
-    "fragance": "madera",
-    "name": "Polo Classic",
+    "type": "Perfume",
+    "tag": "Madera",
+    "name": "Blue Seduction",
+    "brand": "Antonio Banderas",
+    "image": "../images/product-image/bluesed.png",
     "price": "$ 6000"
   },
   {
-    "type": "perfume",
-    "fragance": "cuero",
-    "name": "Equus",
-    "price": "$ 5000"
-  },
-
-  {
-    "type": "crema",
-    "name": "Rosa mosqueta",
-    "price": "$ 400"
+    "type": "Perfume",
+    "tag": "Madera",
+    "name": "King of Seduction",
+    "brand": "Antonio Banderas",
+    "image": "../images/product-image/kingofsed.png",
+    "price": "$ 6000"
   },
   {
-    "type": "crema",
-    "name": "Ordeñe",
-    "price": "$ 300"
+    "type": "Perfume",
+    "tag": "Cuero",
+    "name": "Absolute",
+    "brand": "Kevin",
+    "image": "../images/product-image/kevinnegro.png",
+    "price": "$ 6000"
+  },
+  {
+    "type": "Perfume",
+    "tag": "Cuero",
+    "name": "Kevin",
+    "brand": "Kevin",
+    "image": "../images/product-image/kevinrojo.png",
+    "price": "$ 6000"
+  },
+  {
+    "type": "Maquillaje",
+    "name": "Colossal",
+    "tag": "Pestaña",
+    "brand": "Maybeline",
+    "image": "../images/product-image/colosmayb.png",
+    "price": "$ 6000"
+  },
+  {
+    "type": "Maquillaje",
+    "name": "Mascara pestañas",
+    "tag": "Pestaña",
+    "brand": "Maybeline",
+    "image": "../images/product-image/mascpestmayb.png",
+    "price": "$ 6000"
+  },
+  {
+    "type": "Maquillaje",
+    "name": "Fit me",
+    "tag": "Polvo facial",
+    "brand": "Maybeline",
+    "image": "../images/product-image/fitmemayb.png",
+    "price": "$ 6000"
+  },
+  {
+    "type": "Cabello",
+    "name": "Tintura negro",
+    "tag": "Tintura",
+    "brand": "Koleston",
+    "image": "../images/product-image/kolestneg.png",
+    "price": "$ 6000"
+  },
+  {
+    "type": "Cabello",
+    "name": "Kit coloracion",
+    "tag": "Tintura",
+    "brand": "Garnier",
+    "image": "../images/product-image/garnkit.png",
+    "price": "$ 6000"
+  },
+  {
+    "type": "Cabello",
+    "name": "Hair food papaya",
+    "tag": "Restaurador",
+    "brand": "Garnier",
+    "image": "../images/product-image/hairfoodpapagarn.png",
+    "price": "$ 6000"
   }
 ]

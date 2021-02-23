@@ -17,7 +17,7 @@ const Carousel = () => {
         nodes {
           id
           childImageSharp {
-            fluid {
+            fluid(maxHeight: 500) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -44,14 +44,17 @@ const Carousel = () => {
           className="text-7xl w-1/5 self-center p-4 cursor-pointer"
         />
 
-        <div className="w-2/5 content-center">
-          {images.map((image, index) => {
-            if (index === imgIndex) {
-              return <Img fluid={image.childImageSharp.fluid} key={image.id} />
-            }
-            return null
-          })}
-        </div>
+        {images.map((image, index) => {
+          return index === imgIndex ? (
+            <div key={image.id} className="h-52 w-52 object-scale-down">
+              <Img
+                className=" "
+                fluid={image.childImageSharp.fluid}
+                key={image.id}
+              />
+            </div>
+          ) : null
+        })}
 
         <FontAwesomeIcon
           icon={faAngleDoubleRight}

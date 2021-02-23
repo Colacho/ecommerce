@@ -2,8 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
-
 import Header from "./header"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -28,11 +28,7 @@ const Layout = ({ children }) => {
 
         <main className="p-4 container mx-auto flex-grow">{children}</main>
 
-        <div className="bg-purple-500">
-          <footer className="p-4 container mx-auto">
-            <h1>Aca va el footer</h1>
-          </footer>
-        </div>
+        <Footer />
       </div>
     </>
   )
