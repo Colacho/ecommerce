@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 import Img from "gatsby-image"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faSearch } from "@fortawesome/free-solid-svg-icons"
 
 const SearchBar = ({ products }) => {
   const [item, setItem] = useState("")
@@ -19,13 +21,13 @@ const SearchBar = ({ products }) => {
     )
   }
 
-  var matched
+  let matched = []
   criteria === ""
     ? (matched = products.filter(i => searchFilter(i)))
     : (matched = products
         .filter(p => p.type === criteria)
         .filter(i => searchFilter(i)))
-  console.log(matched)
+
   return (
     <div>
       <div className="space-x-4 mb-2">
@@ -33,6 +35,9 @@ const SearchBar = ({ products }) => {
           className="px-2 border rounded border-purple-500"
           value="Perfume"
           onClick={handleClick}
+          style={{
+            backgroundColor: criteria === "Perfume" ? "#8b5cf6" : "white",
+          }}
         >
           Perfumes
         </button>
@@ -40,6 +45,9 @@ const SearchBar = ({ products }) => {
           className="px-2 border rounded border-purple-500"
           value="Maquillaje"
           onClick={handleClick}
+          style={{
+            backgroundColor: criteria === "Maquillaje" ? "#8b5cf6" : "white",
+          }}
         >
           Maquillajes
         </button>
@@ -47,6 +55,9 @@ const SearchBar = ({ products }) => {
           className="px-2 border rounded border-purple-500"
           value="Cabello"
           onClick={handleClick}
+          style={{
+            backgroundColor: criteria === "Cabello" ? "#8b5cf6" : "white",
+          }}
         >
           Cabello
         </button>
@@ -54,24 +65,32 @@ const SearchBar = ({ products }) => {
           className="px-2 border rounded border-purple-500"
           value=""
           onClick={handleClick}
+          style={{
+            backgroundColor: criteria === "" ? "#8b5cf6" : "white",
+          }}
         >
           Todos los productos
         </button>
       </div>
-      <form>
-        <input
-          className="border rounded"
-          placeholder="buscar..."
-          name="item"
-          type="text"
-          value={item}
-          onChange={handleChange}
-        />
-      </form>
-      <div>
+      <div className="flex space-x-2">
+        <form>
+          <input
+            className="border rounded"
+            placeholder="buscar..."
+            name="item"
+            type="text"
+            value={item}
+            onChange={handleChange}
+          />
+        </form>
+        <button>
+          <FontAwesomeIcon icon={faSearch} className="" />
+        </button>
+      </div>
+      <div className="flex">
         {item !== ""
           ? matched.map(product => (
-              <div key={product.id}>
+              <div key={product.id} className="space-x-2 p-2">
                 <h1>{product.name}</h1>
                 <Img
                   className="h-20 w-20"
