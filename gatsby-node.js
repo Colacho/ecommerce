@@ -16,7 +16,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     const product = edge.node
     createPage({
       path: `/product/${product.id}`,
-      component: require.resolve("./src/pages/product.js"),
+      component: require.resolve("./src/templates/product.js"),
       context: {
         slug: product.name,
       },
