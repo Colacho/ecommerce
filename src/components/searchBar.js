@@ -87,7 +87,7 @@ const SearchBar = ({ products }) => {
           <FontAwesomeIcon icon={faSearch} className="" />
         </button>
       </div>
-      <div className="flex">
+      <div className="flex flex-wrap">
         {item !== ""
           ? matched.map(product => (
               <div key={product.id} className="space-x-2 p-2">
